@@ -12,9 +12,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="KotlinJavaRuntime" level="project" />
-    <orderEntry type="library" name="java-json" level="project" />
-    <orderEntry type="library" name="javax.mail" level="project" />
-    <orderEntry type="library" name="okhttp-2.5.0" level="project" />
-    <orderEntry type="library" name="okio-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="java-json" level="project" />
+    <orderEntry type="library" exported="" name="javax.mail" level="project" />
+    <orderEntry type="library" exported="" name="okhttp-2.5.0" level="project" />
+    <orderEntry type="library" exported="" name="okio-2.1.0" level="project" />
   </component>
 </module>

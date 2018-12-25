@@ -17,9 +17,9 @@ import java.util.Properties;
 
 public class SendEmail {
 
-    protected static String username;
-    protected static String password;
-    protected static String receiverAddress;
+    protected static String mUsername;
+    protected static String mPassword;
+    protected static String mReceiverAddress;
 
     public SendEmail(String ip) {
 
@@ -30,21 +30,21 @@ public class SendEmail {
         try {
             inputStream = new FileInputStream(cfgFile);
 
-            username = properties.getProperty("username");
-            password = properties.getProperty("password");
-            receiverAddress = properties.getProperty("receiverAddress");
+            mUsername = properties.getProperty("username");
+            mPassword = properties.getProperty("password");
+            mReceiverAddress = properties.getProperty("receiverAddress");
 
             Session session = Session.getInstance(properties,
                     new javax.mail.Authenticator() {
                         protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(username, password);
+                            return new PasswordAuthentication(mUsername, mPassword);
                         }
                     });
             try {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress("do_not_reply@watcher.com"));
                 message.addRecipient(Message.RecipientType.TO,
-                        new InternetAddress(receiverAddress));
+                        new InternetAddress(mReceiverAddress));
                 message.setSubject("External IP address changed!");
                 message.setText("New public IP address assigned is: " + ip);
                 Transport.send(message);

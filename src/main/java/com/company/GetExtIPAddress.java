@@ -5,26 +5,25 @@ import java.io.*;
 
 public class GetExtIPAddress {
 
-    private static boolean testIp = false;
-
+    public static final String mUrl = "http://checkip.amazonaws.com";
+//Getter for IP address
     public String getMyExtIPAddress() throws IOException {
-        URL whatismyip = new URL("http://checkip.amazonaws.com");
+        URL whatismyip = new URL(mUrl);
         BufferedReader in = new BufferedReader(new InputStreamReader(
                 whatismyip.openStream()));
         String ip = in.readLine();
 
-        testIp = validateIp(ip);
+        boolean testIp = validateIp(ip);
 
-        if (testIp == false) {
+        if (!testIp) {
             System.out.println("Cannot get public ip address or information is invalid.\n Check your internet connection");
-        } else if (testIp == true) {
+        } else if (testIp) {
             return ip;
         }
         System.out.println("Cannot get public ip address.\n Check your internet connection\nStopping daemon");
-        String kill = "kill";
-        return kill;
+        return "kill";
     }
-
+//Checking if ip address is in valid format
     private static boolean validateIp(String ip) {
         try {
             if ( ip == null || ip.isEmpty() ) {
