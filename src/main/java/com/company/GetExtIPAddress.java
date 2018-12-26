@@ -47,6 +47,7 @@ public class GetExtIPAddress {
 
             return true;
         } catch (NumberFormatException nfe) {
+            System.out.println("Not valid IP address");
             return false;
         }
     }

@@ -43,9 +43,9 @@ public class Main {
 //If file doesn't exists
 //Get user email configuration
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Sender mUsername");
+            System.out.println("Sender username");
             mUsername = scanner.nextLine();
-            System.out.println("Sender mPassword");
+            System.out.println("Sender password");
             mPassword = scanner.nextLine();
             System.out.println("Set STARTTLS enabled (true/false)");
             mStarttls = scanner.nextLine();
